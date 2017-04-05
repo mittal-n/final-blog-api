@@ -36,6 +36,9 @@ public class BlogApiApplicationTests {
 			JSONObject responseBody = jsonResponse.getBody().getObject();
 			assertNotNull(jsonResponse.getBody());
 			assertEquals(responseBody.getString("firstName"), user.getFirstName());
+			assertNotNull(responseBody.getString("id"));
+			assertEquals(jsonResponse.getStatus(), 200);
+			
 			
 		} catch (UnirestException e) {
 			e.printStackTrace();
