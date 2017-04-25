@@ -3,8 +3,9 @@ buildscript {
 		springBootVersion = '1.4.3.RELEASE'
 	}
 	repositories {
-		mavenCentral()
+	mavenCentral()
 	}
+	
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 	}
@@ -23,7 +24,9 @@ war {
 sourceCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+	
+	jcenter()
+	
 }
 
 configurations {
@@ -34,4 +37,13 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile 'org.testng:testng:6.10'
+	
+	
+}
+
+test {
+	useTestNG()	{
+		suites 'src/test/resources/testng.xml'
+	}
 }
