@@ -33,6 +33,10 @@ configurations {
 	providedRuntime
 }
 
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.0'
+}
+
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
@@ -47,3 +51,5 @@ test {
 		suites 'src/test/resources/testng.xml'
 	}
 }
+
+
