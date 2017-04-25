@@ -1,11 +1,24 @@
 language: java
+
 jdk:
-  - oraclejdk7
+  - oraclejdk8
 
-sudo: required
+os:
+  - linux
 
-before_install:
- - chmod +x gradlew
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+  - $HOME/.gradle
+
+before_script:
+  - echo "Begin gradle tasks"
 
 script:
-  - ./gradlew clean build -i --continue
+  - ./gradlew test
+
+after_script:
+  - echo "Build done"
