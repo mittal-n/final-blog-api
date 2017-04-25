@@ -1,7 +1,12 @@
 language: java
 jdk:
+<<<<<<< HEAD
   - oraclejdk8
   - openjdk8
+=======
+  - oraclejdk7
+  - openjdk7
+>>>>>>> cbc22ca8eb10c355ac4e1f3ac0d9f166e322d8ef
  
 before_install:
  - chmod +x gradlew
